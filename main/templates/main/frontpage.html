@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block title %}Welcome | {% endblock %}
+{% block content %}
+<div class="container is-fullwidth">
+    <div class="columns is-multiline mb-6">
+        <div class="column is-12 has-text-centered mt-6 mb-6">
+            <h2 class="is-size-3">Newest Products</h2>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly; align-items: stretch;">
+        {% for product in newest_products %}
+        <div style="flex: 1 0 0;">  <div style="display: flex; flex-direction: column; height: 100%;"> <div style="flex-grow: 1;">  {% include 'product/parts/list_item.html' %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
